@@ -26,7 +26,7 @@ export function ExplorerLink({
   )
 }
 
-export function ClusterChecker({ children }: { children: ReactNode }) {
+export function ClusterChecker({ children }: { children?: ReactNode }) {
   const { cluster } = useWalletUi()
   const query = useClusterVersion()
 
@@ -48,5 +48,5 @@ export function ClusterChecker({ children }: { children: ReactNode }) {
       </AppAlert>
     )
   }
-  return children
+  return <>{children ?? null}</>
 }
